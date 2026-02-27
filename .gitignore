@@ -1,0 +1,24 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Custom
+/build
+**/build
+.idea/
+*.hprof
+*~
+*.lock
+*.keystore
+*.jks
+*.p12
+*.cer
+*.pem
+*.properties

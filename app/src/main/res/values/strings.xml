@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calendario Dossettiano</string>
+    <string name="btn_retry">Riprova</string>
+    <string name="error_no_reading">Nessuna lettura per questa data.</string>
+    <string name="error_network">Impossibile caricare il testo.\nControlla la connessione.</string>
+    <string name="action_calendar">Scegli data</string>
+    <string name="action_notifications">Notifiche</string>
+    <string name="notif_channel_name">Lectio quotidiana</string>
+    <string name="notif_channel_description">Promemoria giornaliero per la lettura biblica</string>
+    <string name="notif_title">Lectio del %s</string>
+    <string name="notif_settings_title">Notifiche</string>
+    <string name="notif_enable_label">Abilita promemoria</string>
+    <string name="notif_time_label">Orario notifica</string>
+    <string name="notif_change_time">Cambia orario</string>
+</resources>
