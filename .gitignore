@@ -25,12 +25,18 @@ local.properties
 *.dex
 *.class
 
-# Images (Source files not intended for the repo)
+# Images (General ignore)
 *.jpg
 *.jpeg
 *.png
 *.webp
 *.gif
+
+# Exceptions for required images
+!**/src/main/res/mipmap*/*.webp
+!**/src/main/res/mipmap*/*.png
+!**/src/main/fastlane/metadata/android/**/*.png
+!**/src/main/fastlane/metadata/android/**/*.jpg
 
 # System & IDE
 .idea/
