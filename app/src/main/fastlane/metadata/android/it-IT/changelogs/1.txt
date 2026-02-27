@@ -1,0 +1,1 @@
+Versione iniziale con supporto per il calendario 2026 e download offline.

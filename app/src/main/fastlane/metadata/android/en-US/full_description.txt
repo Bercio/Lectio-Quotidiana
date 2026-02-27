@@ -1,0 +1,7 @@
+Provides daily texts for Lectio Divina according to the biblical calendar of the Piccola Famiglia dell'Annunziata.
+
+The app allows you to consult the daily reading directly from your device and offers the possibility to download them in advance for offline consultation, ensuring the availability of texts even without an internet connection.
+
+Texts are taken from the CEI 2008 translation via the bibbiaedu.it portal.
+
+The calendar followed is that of the Piccola Famiglia dell'Annunziata (the community founded by Giuseppe Dossetti).
