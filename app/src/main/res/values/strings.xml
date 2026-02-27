@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calendario Dossettiano</string>
+    <string name="app_name">Lectio Quotidiana</string>
+    <string name="app_description">Rende disponibili ogni giorno i testi per la lectio quotidiana secondo il calendario biblico della piccola famiglia dell\'Annunziata (https://www.famigliedellavisitazione.it/wp/wp-content/uploads/Lectio/Calendari/2026-Calendario%20biblico%20Piccola%20famiglia%20dell%27annunziata.pdf) e permette di scaricarli offline in anticipo.</string>
     <string name="btn_retry">Riprova</string>
     <string name="error_no_reading">Nessuna lettura per questa data.</string>
     <string name="error_network">Impossibile caricare il testo.\nControlla la connessione.</string>
@@ -13,4 +14,7 @@
     <string name="notif_enable_label">Abilita promemoria</string>
     <string name="notif_time_label">Orario notifica</string>
     <string name="notif_change_time">Cambia orario</string>
+    <string name="auto_cache_label">Scarica automaticamente le letture dei 7 giorni successivi al giorno corrente</string>
+    <string name="auto_cache_sublabel">(consigliata in caso di connessione instabile)</string>
+    <string name="notif_permission_rationale">L\'app ha bisogno del permesso per le notifiche per inviarti il promemoria giornaliero.</string>
 </resources>

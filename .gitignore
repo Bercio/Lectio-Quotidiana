@@ -1,3 +1,4 @@
+# Android
 *.iml
 .gradle
 /local.properties
@@ -9,16 +10,36 @@
 .cxx
 local.properties
 
-# Custom
-/build
-**/build
-.idea/
-*.hprof
-*~
-*.lock
+# Secrets & Keystores
 *.keystore
 *.jks
 *.p12
 *.cer
 *.pem
-*.properties
+*.lock
+
+# Build Outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Images (Source files not intended for the repo)
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+
+# System & IDE
+.idea/
+.gradle/
+build/
+**/build/
+*.hprof
+*~
+*.swp
+
+# Other
+test_fetch.py

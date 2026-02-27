@@ -50,6 +50,62 @@ class BibleFetcherTest {
 
     // --- Esther (Est) tests from calendario.json ---
 
+    @Test fun testEst_1_1a_r_content() = runBlocking {
+        val expected = """
+            1a Nel secondo anno di regno del grande re Artaserse, il giorno primo di Nisan, Mardocheo,
+            figlio di Giàiro, figlio di Simei, figlio di Kis, della tribù di Beniamino,
+            ebbe in sogno una visione.
+            1b Egli era ⌈un Giudeo che abitava nella città di Susa⌉, un uomo ragguardevole,
+            che prestava servizio alla corte del re
+            1c ⌈e proveniva dal gruppo degli esuli che Nabucodònosor, re di Babilonia,
+            aveva deportato da Gerusalemme con Ieconia, re della Giudea.⌉
+            1d Questo fu il suo sogno: ecco, grida e tumulto, tuoni e terremoto,
+            sconvolgimenti sulla terra.
+            1e Ed ecco: due enormi draghi avanzarono, tutti e due pronti alla lotta,
+            [e risuonò potente il loro grido.]
+            1f ⌈Al loro grido ogni nazione si preparò alla guerra,
+            per combattere contro il popolo dei giusti.⌉
+            1g Ecco, un giorno di tenebre e di caligine! Tribolazione e angustia,
+            afflizione e grandi sconvolgimenti sulla terra!
+            1h ⌈Tutta la nazione dei giusti rimase sconvolta: essi, temendo la propria rovina,
+            si prepararono a morire⌉ e levarono a Dio il loro grido.
+            1i Ma dal loro grido, come da una piccola fonte, sorse un grande fiume
+            con acque abbondanti.
+            1k Apparvero la luce e il sole: gli umili furono esaltati e divorarono i superbi.
+            1l Mardocheo allora si svegliò: aveva visto questo sogno e quello che Dio aveva
+            deciso di fare; in cuor suo continuava a ripensarvi fino a notte,
+            cercando di comprenderlo in ogni suo particolare.
+            1m ⌈Mardocheo alloggiava alla corte con Gabatà e Tarra, i due eunuchi del re
+            che custodivano la corte.
+            1n Intese i loro ragionamenti, indagò sui loro disegni e venne a sapere che quelli
+            si preparavano a mettere le mani sul re Artaserse. Allora ne avvertì il re.
+            1o Il re sottopose i due eunuchi a un interrogatorio: essi confessarono
+            e furono tolti di mezzo.
+            1p Poi il re fece scrivere questi fatti nelle cronache e anche Mardocheo
+            li mise per iscritto.
+            1q Il re costituì Mardocheo funzionario della corte e gli fece regali
+            in compenso di queste cose.
+            1r Ma vi era anche Aman, figlio di Amadàta, il Bugeo, che era molto stimato
+            presso il re e cercò il modo di fare del male a Mardocheo e al suo popolo,
+            per questa faccenda che riguardava i due eunuchi del re.⌉
+        """.trimIndent()
+
+        val result = fetcher.fetch("Est 1,1a-r")
+        val actual = result.verses.joinToString("") { v -> v.verseLabel + v.text }
+
+        // Print for diagnosis
+        println("\n--- Actual (Est 1,1a-r) ---")
+        result.verses.forEach { println("${it.verseLabel}: ${it.text}") }
+
+        val actualNorm   = actual.replace(Regex("\\s+"), "")
+        val expectedNorm = expected.replace(Regex("\\s+"), "")
+
+        org.junit.Assert.assertEquals(
+            "Est 1,1a-r text mismatch (whitespace-normalised)",
+            expectedNorm, actualNorm
+        )
+    }
+
     @Test fun testEst_1_1a_r() = runBlocking { printFetchResult("Est 1,1a-r") }
     @Test fun testEst_1_1_22() = runBlocking { printFetchResult("Est 1,1-22") }
     @Test fun testEst_2_1_23() = runBlocking { printFetchResult("Est 2,1-23") }

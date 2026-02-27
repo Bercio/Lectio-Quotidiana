@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background">
+
+    <!-- Month navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnPrevMonth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="&#8249;"
+            android:textSize="28sp"
+            android:textColor="@color/primary"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/tvMonthYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/body_text"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/btnNextMonth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="&#8250;"
+            android:textSize="28sp"
+            android:textColor="@color/primary"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- Day-of-week headers: Lu Ma Me Gi Ve Sa Do -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Lu" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Ma" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Me" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Gi" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Ve" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Sa" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Do" android:textSize="11sp" android:textColor="@color/secondary_text" android:textAllCaps="true" />
+
+    </LinearLayout>
+
+    <!-- Day grid — filled programmatically row by row -->
+    <LinearLayout
+        android:id="@+id/containerDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

@@ -38,7 +38,9 @@ class BibleScraper(
             "&quot;" to "\"", "&#039;" to "'", "&nbsp;" to " ",
             "&agrave;" to "à", "&egrave;" to "è", "&igrave;" to "ì",
             "&ograve;" to "ò", "&ugrave;" to "ù", "&Agrave;" to "À",
-            "&Egrave;" to "È", "&eacute;" to "é", "&Eacute;" to "É"
+            "&Egrave;" to "È", "&eacute;" to "é", "&Eacute;" to "É",
+            // CEI 2008 editorial brackets marking Greek Septuagint additions
+            "&lceil;" to "⌈", "&rceil;" to "⌉"
         )
     }
 
@@ -85,9 +87,11 @@ class BibleScraper(
         for ((entity, char) in ENTITIES) {
             text = text.replace(entity, char)
         }
-        // Decode numeric entities like &#8220;
+        // Decode numeric entities like &#8220; — uses toChars() to handle the full Unicode range
         text = text.replace(Regex("&#(\\d+);")) { m ->
-            m.groupValues[1].toIntOrNull()?.toChar()?.toString() ?: m.value
+            val cp = m.groupValues[1].toIntOrNull()
+            if (cp != null && Character.isValidCodePoint(cp)) String(Character.toChars(cp))
+            else m.value
         }
         return text.trim()
     }

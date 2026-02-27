@@ -32,11 +32,21 @@ class ReadingViewModel(application: Application) : AndroidViewModel(application)
                 return@launch
             }
             try {
-                val text = repository.fetchText(reference)
+                val text = repository.fetchText(reference, date)
                 _state.postValue(ReadingState.Success(date, reference, text))
             } catch (e: Exception) {
                 _state.postValue(ReadingState.Error(e.message ?: "Errore sconosciuto", reference))
             }
+        }
+    }
+
+    /** Returns the set of dates that are already cached on disk. Fast — just lists a directory. */
+    fun getCachedDates(): Set<LocalDate> = repository.cachedDates()
+
+    /** Fires-and-forgets a background pre-fetch of the 7 days after [from]. No UI state changes. */
+    fun silentPrefetch(from: LocalDate) {
+        viewModelScope.launch {
+            repository.prefetchWeek(from)
         }
     }
 }

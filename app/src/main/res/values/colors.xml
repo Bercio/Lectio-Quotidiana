@@ -7,4 +7,7 @@
     <color name="secondary_text">#666666</color>
     <color name="divider">#E0E0E0</color>
     <color name="reference_text">#2E7D32</color>
+    <color name="cached_day">#4CAF50</color>
+    <color name="today_day">#C2566A</color>
+    <color name="selected_day">#C2566A</color>
 </resources>

@@ -16,6 +16,7 @@ class NotificationSettingsActivity : AppCompatActivity() {
     private lateinit var switchEnabled: SwitchCompat
     private lateinit var tvTime: TextView
     private lateinit var btnChangeTime: Button
+    private lateinit var switchAutoCache: SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class NotificationSettingsActivity : AppCompatActivity() {
         switchEnabled = findViewById(R.id.switchNotifEnabled)
         tvTime = findViewById(R.id.tvTime)
         btnChangeTime = findViewById(R.id.btnChangeTime)
+        switchAutoCache = findViewById(R.id.switchAutoCache)
 
         val prefs = getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         switchEnabled.isChecked = prefs.getBoolean(KEY_ENABLED, false)
@@ -41,6 +43,11 @@ class NotificationSettingsActivity : AppCompatActivity() {
             val m = prefs.getInt(KEY_MINUTE, 0)
             if (isChecked) NotificationScheduler.schedule(this, h, m)
             else NotificationScheduler.cancel(this)
+        }
+
+        switchAutoCache.isChecked = prefs.getBoolean(KEY_AUTO_CACHE, true)
+        switchAutoCache.setOnCheckedChangeListener { _, isChecked ->
+            prefs.edit().putBoolean(KEY_AUTO_CACHE, isChecked).apply()
         }
 
         btnChangeTime.setOnClickListener {
@@ -70,5 +77,6 @@ class NotificationSettingsActivity : AppCompatActivity() {
         const val KEY_ENABLED = "notif_enabled"
         const val KEY_HOUR = "notif_hour"
         const val KEY_MINUTE = "notif_minute"
+        const val KEY_AUTO_CACHE = "auto_cache"
     }
 }
