@@ -11,10 +11,30 @@ import java.time.LocalDate
 /**
  * Persists BibleText objects as JSON files in filesDir/lectio_cache/.
  * One file per date, named "yyyy-MM-dd.json".
+ *
+ * A "version" file is kept alongside the date files. If it is absent or
+ * does not match [CACHE_VERSION], all cached entries are wiped so that
+ * stale data from old scraper/parser versions is never served.
+ * Bump [CACHE_VERSION] whenever a scraper or parser fix could produce
+ * different text for the same reference on the same date.
  */
 class ReadingCache(context: Context) {
 
-    private val dir = File(context.filesDir, "lectio_cache").also { it.mkdirs() }
+    companion object {
+        private const val CACHE_VERSION = 2
+    }
+
+    private val dir = File(context.filesDir, "lectio_cache")
+
+    init {
+        dir.mkdirs()
+        val versionFile = File(dir, "version")
+        val stored = versionFile.takeIf { it.exists() }?.readText()?.trim()?.toIntOrNull()
+        if (stored != CACHE_VERSION) {
+            dir.listFiles()?.forEach { it.delete() }
+            versionFile.writeText(CACHE_VERSION.toString())
+        }
+    }
 
     fun isCached(date: LocalDate): Boolean = fileFor(date).exists()
 
