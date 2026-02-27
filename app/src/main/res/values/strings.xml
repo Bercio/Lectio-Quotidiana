@@ -6,15 +6,31 @@
     <string name="error_no_reading">Nessuna lettura per questa data.</string>
     <string name="error_network">Impossibile caricare il testo.\nControlla la connessione.</string>
     <string name="action_calendar">Scegli data</string>
-    <string name="action_notifications">Notifiche</string>
+    <string name="action_notifications">Opzioni</string>
     <string name="notif_channel_name">Lectio quotidiana</string>
     <string name="notif_channel_description">Promemoria giornaliero per la lettura biblica</string>
     <string name="notif_title">Lectio del %s</string>
-    <string name="notif_settings_title">Notifiche</string>
+    <string name="notif_settings_title">Opzioni</string>
     <string name="notif_enable_label">Abilita promemoria</string>
-    <string name="notif_time_label">Orario notifica</string>
+    <string name="notif_time_label">Orario promemoria</string>
     <string name="notif_change_time">Cambia orario</string>
     <string name="auto_cache_label">Scarica automaticamente le letture dei 7 giorni successivi al giorno corrente</string>
     <string name="auto_cache_sublabel">(consigliata in caso di connessione instabile)</string>
     <string name="notif_permission_rationale">L\'app ha bisogno del permesso per le notifiche per inviarti il promemoria giornaliero.</string>
+<!-- Terms and Disclaimer -->
+    <string name="title_terms">Termini e Condizioni</string>
+    <string name="disclaimer_content">
+        <b>Natura dell\'App</b>\n
+        Questa applicazione è uno strumento amatoriale creato per facilitare la consultazione dei
+        testi per la Lectio Quotidiana. Non è un\'applicazione ufficiale della Piccola Famiglia
+        dell\'Annunziata.\n\n
+
+        <b>Utilizzo dei testi</b>\n
+        I testi biblici sono resi disponibili dal sito bibbiaedu.it della
+        Fondazione di Religione Santi Francesco d’Assisi e Caterina da Siena bibbiaedu.it
+        La funzione di caching è fornita per consentire la lettura offline al solo scopo devozionale
+        \n\n
+
+    </string>
+    <string name="btn_close">Chiudi</string>
 </resources>
