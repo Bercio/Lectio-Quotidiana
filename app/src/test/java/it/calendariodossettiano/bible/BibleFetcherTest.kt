@@ -49,7 +49,7 @@ class BibleFetcherTest {
     }
 
     // --- Esther (Est) tests from calendario.json ---
-
+    @Test fun myEst() = runBlocking { printFetchResult("Est 1,1a-r") }
     @Test fun testEst_1_1a_r_content() = runBlocking {
         val expected = """
             1a Nel secondo anno di regno del grande re Artaserse, il giorno primo di Nisan, Mardocheo,
